@@ -138,3 +138,30 @@ body {
   box-shadow: var(--shadow-card);
   transition: transform var(--duration-normal) var(--ease-spring), box-shadow var(--duration-normal) var(--ease-spring);
 }
+
+.marquee {
+  overflow: hidden;
+  background: var(--acid);
+  color: #30351c;
+  border-block: 1px solid #00000010;
+}
+.marquee > div {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: 0.85rem 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  animation: marquee 26s linear infinite;
+}
+.marquee i {
+  font-style: normal;
+  font-size: 0.85rem;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-35%);
+  }
+}
